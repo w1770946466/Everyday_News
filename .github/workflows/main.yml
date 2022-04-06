@@ -27,7 +27,7 @@ jobs:
 
       # 设置运行环境
       - name: "设置python3.8环境"
-        uses: actions/stup-python@v1
+        uses: actions/setup-python@v1
         with:
           python-version: 3.8
       - name: "安装依赖包"
