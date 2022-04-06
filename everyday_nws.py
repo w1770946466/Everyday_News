@@ -116,6 +116,7 @@ def post_tg():
 
 
     request_url = "https://api.telegram.org/bot" + TOKEN + "/sendMediaGroup"
+    print(request_url)
     params = {
         "chat_id": CHAT_ID
         , "media":
