@@ -5,7 +5,7 @@ name: News
 # Controls when the workflow will run
 on:
   #提交时触发
-  #push:
+  push:
   #定时触发
   schedule:
     - cron: "00 04 * * *"    
@@ -32,7 +32,7 @@ jobs:
           python-version: 3.8
       - name: "下载中文字体"
         run: |
-          wget https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf
+          wget https://raw.githubusercontent.com/w1770946466/Everyday_News/main/FeiHuaSongTi-2.ttf
           sudo mkdir -p /usr/share/fonts/custom
           sudo mv Monaco.ttf /usr/share/fonts/custom
           sudo chmod 744 /usr/share/fonts/custom/Monaco.ttf
