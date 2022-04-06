@@ -110,6 +110,7 @@ def sentence():
 def post_tg():
     TOKEN = os.environ.get("TOKEN")
     CHAT_ID = os.environ.get("CHAT_ID")
+    print(TOKEN,CHAT_ID)
 
 
     request_url = "https://api.telegram.org/bot" + TOKEN + "/sendMediaGroup"
