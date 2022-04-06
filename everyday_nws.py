@@ -21,7 +21,7 @@ base_jpg = random.sample(files,1)[0]
 tx_key = '7a451b8515e509232c9bf25a62ef6583'
 
 
-def img(base_jpg):
+def img():
     # 加载背景图片
     bk_img = cv2.imread(base_jpg)
     # 设置需要显示的字体
