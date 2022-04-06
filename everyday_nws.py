@@ -7,14 +7,23 @@ import numpy as np
 import requests
 from PIL import ImageFont, Image, ImageDraw
 from requests import post
+import random
+import os
+
+
+#随机选择底片
+photo_path = './1920x1080'
+files = os.listdir(photo_path)
+base_jpg = random.sample(files,1)
+
 
 # 天行数据的key
 tx_key = '7a451b8515e509232c9bf25a62ef6583'
 
 
-def img():
+def img(base_jpg):
     # 加载背景图片
-    bk_img = cv2.imread("base.jpg")
+    bk_img = cv2.imread(base_jpg)
     # 设置需要显示的字体
     #fontpath = fm.findfont(fm.FontProperties())
     fontpath = r'/usr/share/fonts/custom/BOBOHEI-2.otf'
