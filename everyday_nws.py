@@ -110,16 +110,12 @@ def post_tg():
         """[
             {
                 "type": "photo"
-                , "media": "attach://random-name-1"}, 
-            {
-                "type": "photo"
-                , "media": "attach://random-name-2"}
+                , "media": "attach://random-name-1"}
         ]"""
     }
 
     files = {
         "random-name-1": open(r"news.jpg", "rb")
-        , "random-name-2": open(r"base.jpg", "rb")
     }
 
     result = requests.post(request_url, params= params, files= files)
