@@ -18,7 +18,7 @@ def img():
     bk_img = cv2.imread("base.jpg")
     # 设置需要显示的字体
     #fontpath = fm.findfont(fm.FontProperties())
-    fontpath = r'/usr/share/fonts/custom/FeiHuaSongTi-2.ttf'
+    fontpath = r'/usr/share/fonts/custom/BOBOHEI-2.otf'
     print(fontpath)
     font = ImageFont.truetype(fontpath,80)
     img_pil = Image.fromarray(bk_img)
