@@ -7,6 +7,7 @@ import numpy as np
 import requests
 from PIL import ImageFont, Image, ImageDraw
 from requests import post
+import matplotlib.font_manager as fm
 
 # 天行数据的key
 tx_key = '7a451b8515e509232c9bf25a62ef6583'
@@ -16,8 +17,8 @@ def img():
     # 加载背景图片
     bk_img = cv2.imread("base.jpg")
     # 设置需要显示的字体
-    fontpath = "/usr/share/fonts/SIMYOU.TTF"
-    font = ImageFont.truetype(fontpath, 80)
+    #fontpath = "/usr/share/fonts/SIMYOU.TTF"
+    font = ImageFont.truetype(fm.findfont(fm.FontProperties(family='DejaVu Sans')),80)
     img_pil = Image.fromarray(bk_img)
     draw = ImageDraw.Draw(img_pil)
     # 绘制文字信息
