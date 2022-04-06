@@ -20,9 +20,9 @@ jobs:
     runs-on: ubuntu-latest
     
     #设置环境变量
-    env: 
-      TOKEN: ${{ secrets.TOKEN}}
-      CHAI_ID: ${{ secrets.CHAT_ID}}
+    #env: 
+      #TOKEN: ${{ secrets.TOKEN}}
+      #CHAI_ID: ${{ secrets.CHAT_ID}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -46,4 +46,7 @@ jobs:
       - name: "安装依赖包"
         run: pip install -r ./requirements.txt
       - name: "开始运行指定文件"
+        env: 
+         TOKEN: ${{ secrets.TOKEN }}
+         CHAI_ID: ${{ secrets.CHAT_ID}}
         run: python3 everyday_nws.py 
