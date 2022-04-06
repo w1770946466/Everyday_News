@@ -1,0 +1,9 @@
+json
+locale
+time
+cn2an
+opencv-python
+numpy
+requests
+pillow
+
