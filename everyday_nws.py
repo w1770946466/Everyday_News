@@ -37,7 +37,7 @@ def img():
     #日期位置
     draw.text((900, 55), todayYear(), font=font, fill=(255, 255, 0))
     #新闻位置
-    draw.text((100,28), news(), font=font_small, fill=(255, 255, 255))
+    draw.text((100,20), news(), font=font_small, fill=(255, 255, 255))
     font_red = ImageFont.truetype(fontpath, 40)
     #名句位置
     draw.text((900, 200), verse(), font=font_red, fill=(255, 255, 0))
