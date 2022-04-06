@@ -7,7 +7,6 @@ import numpy as np
 import requests
 from PIL import ImageFont, Image, ImageDraw
 from requests import post
-import matplotlib.font_manager as fm
 
 # 天行数据的key
 tx_key = '7a451b8515e509232c9bf25a62ef6583'
@@ -86,7 +85,7 @@ def todayYear():
     return strftime("%Y年%m月%d日", localtime(time()))
 
 
-# 精美局子
+# 精美句子
 def sentence():
     req_url = 'http://api.tianapi.com/dujitang/index?key=' + tx_key
     response = requests.get(req_url)
