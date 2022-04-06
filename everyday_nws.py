@@ -30,12 +30,16 @@ def img():
     else:
         today = '星期' + cn2an.an2cn(today)
     # 自行调整此处文字所在位置
-    draw.text((1600, 55), today, font=font, fill=(255, 255, 0))
+    #星期位置
+    draw.text((1650, 55), today, font=font, fill=(255, 255, 0))  
     font_small = ImageFont.truetype(fontpath, 35)
     font_sentence = ImageFont.truetype(fontpath, 16)
+    #日期位置
     draw.text((900, 55), todayYear(), font=font, fill=(255, 255, 0))
-    draw.text((100,55), news(), font=font_small, fill=(255, 255, 255))
+    #新闻位置
+    draw.text((100,40), news(), font=font_small, fill=(255, 255, 255))
     font_red = ImageFont.truetype(fontpath, 40)
+    #名句位置
     draw.text((900, 200), verse(), font=font_red, fill=(255, 255, 0))
     bk_img = np.array(img_pil)
     # 展示图片,不需要可注释
