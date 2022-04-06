@@ -18,7 +18,7 @@ def img():
     bk_img = cv2.imread("base.jpg")
     # 设置需要显示的字体
     #fontpath = fm.findfont(fm.FontProperties(family='monospace'))
-    fontpath = '/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/STHeiti.ttf'
+    fontpath = '/opt/hostedtoolcache/Python/3.8.12/x64/lib/python3.8/site-packages/matplotlib/mpl-data/fonts/ttf/WenQuanYi Micro Hei.ttf'
     print(fontpath)
     font = ImageFont.truetype(fontpath,80)
     img_pil = Image.fromarray(bk_img)
