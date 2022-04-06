@@ -33,9 +33,14 @@ jobs:
       - name: "下载中文字体"
         run: |
           wget https://github.com/fangwentong/dotfiles/raw/master/ubuntu-gui/fonts/Monaco.ttf
-          mkdir -p ~/.fonts
-          mv Monaco.ttf ~/.fonts
-          fc-cache -vf
+          sudo mkdir -p /usr/share/fonts/custom
+          sudo mv Monaco.ttf /usr/share/fonts/custom
+          sudo chmod 744 /usr/share/fonts/custom/Monaco.ttf
+
+          sudo mkfontscale
+          sudo mkfontdir
+          sudo fc-cache -fv
+
       - name: "安装依赖包"
         run: pip install -r ./requirements.txt
       - name: "开始运行指定文件"
