@@ -116,7 +116,7 @@ def post_tg():
 
 
     request_url = "https://api.telegram.org/bot" + TOKEN + "/sendMediaGroup"
-    print(request_url)
+    #print(request_url)
     params = {
         "chat_id": CHAT_ID
         , "media":
@@ -132,7 +132,7 @@ def post_tg():
     }
 
     result = requests.post(request_url, params= params, files= files)
-    print(result,params)
+    #print(result,params)
     if str(result) =="<Response [200]>":
         print("图片传输完成请注意查收！")
     else:
