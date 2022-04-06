@@ -17,7 +17,7 @@ def img():
     # 加载背景图片
     bk_img = cv2.imread("base.jpg")
     # 设置需要显示的字体
-    fontpath = fm.findfont(fm.FontProperties(fname='方正卡通简体.ttf'))
+    fontpath = fm.findfont(fm.FontProperties(family='monospace'))
     font = ImageFont.truetype(fontpath,80)
     img_pil = Image.fromarray(bk_img)
     draw = ImageDraw.Draw(img_pil)
