@@ -132,6 +132,7 @@ def post_tg():
     }
 
     result = requests.post(request_url, params= params, files= files)
+    print(result)
     if str(result) =="<Response [200]>":
         print("图片传输完成请注意查收！")
     else:
