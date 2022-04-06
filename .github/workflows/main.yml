@@ -30,6 +30,12 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: 3.8
+      - name: "设置中文字体"
+        run: 
+          wget https://github.com/fangwentong/dotfiles/blob/ubuntu/fonts/Monaco.ttf?raw=true
+          mkdir -p ~/.fonts
+          mv Monaco.ttf ~/.fonts
+          fc-cache -vf
       - name: "安装依赖包"
         run: pip install -r ./requirements.txt
       - name: "开始运行指定文件"
