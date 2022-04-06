@@ -14,7 +14,7 @@ import os
 #随机选择底片
 photo_path = './1920x1080'
 files = os.listdir(photo_path)
-base_jpg = random.sample(files,1)
+base_jpg = random.sample(files,1)[0]
 
 
 # 天行数据的key
