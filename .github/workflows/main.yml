@@ -36,7 +36,6 @@ jobs:
           sudo mkdir -p /usr/share/fonts/custom
           sudo mv Monaco.ttf /usr/share/fonts/custom
           sudo chmod 744 /usr/share/fonts/custom/Monaco.ttf
-          sudo mkfontdir
           sudo fc-cache -fv
 
       - name: "安装依赖包"
