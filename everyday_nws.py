@@ -17,7 +17,7 @@ def img():
     # 加载背景图片
     bk_img = cv2.imread("base.jpg")
     # 设置需要显示的字体
-    fontpath = fm.findfont(fm.FontProperties(family='cursive'))
+    fontpath = fm.findfont(fm.FontProperties(fname='方正卡通简体.ttf'))
     font = ImageFont.truetype(fontpath,80)
     img_pil = Image.fromarray(bk_img)
     draw = ImageDraw.Draw(img_pil)
@@ -113,7 +113,7 @@ def post_tg():
 
     files = {
         "random-name-1": open(r"news.jpg", "rb")
-        , "random-name-2": open(r"base.jpg", "rb")
+        #, "random-name-2": open(r"base.jpg", "rb")
     }
 
     result = requests.post(request_url, params= params, files= files)
