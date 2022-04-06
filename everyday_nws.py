@@ -30,7 +30,7 @@ def img():
     else:
         today = '星期' + cn2an.an2cn(today)
     # 自行调整此处文字所在位置
-    draw.text((1250, 55), today, font=font, fill=(255, 255, 0))
+    draw.text((1700, 55), today, font=font, fill=(255, 255, 0))
     font_small = ImageFont.truetype(fontpath, 35)
     font_sentence = ImageFont.truetype(fontpath, 16)
     draw.text((900, 55), todayYear(), font=font, fill=(255, 255, 0))
