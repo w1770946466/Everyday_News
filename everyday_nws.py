@@ -113,7 +113,7 @@ def post_tg():
 
     files = {
         "random-name-1": open(r"news.jpg", "rb")
-        #, "random-name-2": open(r"base.jpg", "rb")
+        , "random-name-2": open(r"base.jpg", "rb")
     }
 
     result = requests.post(request_url, params= params, files= files)
