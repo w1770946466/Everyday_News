@@ -17,8 +17,8 @@ def img():
     # 加载背景图片
     bk_img = cv2.imread("base.jpg")
     # 设置需要显示的字体
-    #fontpath = "/usr/share/fonts/SIMYOU.TTF"
-    font = ImageFont.truetype(fm.findfont(fm.FontProperties(family='DejaVu Sans')),80)
+    fontpath = fm.findfont(fm.FontProperties(family='DejaVu Sans'))
+    font = ImageFont.truetype(fontpath,80)
     img_pil = Image.fromarray(bk_img)
     draw = ImageDraw.Draw(img_pil)
     # 绘制文字信息
