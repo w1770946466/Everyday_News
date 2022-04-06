@@ -5,10 +5,10 @@ name: News
 # Controls when the workflow will run
 on:
   #提交时触发
-  #push:
+  push:
   #定时触发
   schedule:
-    - cron: "00 04 * * *"    
+    - cron: "00 23 * * *"    
   # 允许手动触发
   workflow_dispatch:
 
