@@ -142,7 +142,8 @@ def post_tg():
 if __name__ == '__main__':
     img()
     print("*****图片制作完成*****"+"\n"+"*****正在传输...*****")
-    TOKEN = os.environ.get("TOKEN")
+    global CHAT_ID,TOKEN
     CHAT_ID = os.environ.get("CHAT_ID")
+    TOKEN = os.environ.get("TOKEN")
     post_tg()
     
