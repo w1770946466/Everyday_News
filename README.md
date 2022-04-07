@@ -13,6 +13,6 @@
     <img src="https://img.shields.io/github/license/nonebot/nonebot2" alt="LICENSE">
   </a>
   <a href="https://github.com/w1770946466/Everyday_News/actions/workflows/main.yml">
-    <img src="https://github.com/w1770946466/Everyday_News/actions/workflows/main.yml/badge.svg?branch=master&event=push" alt="site"/>
+    <img src="https://github.com/w1770946466/Everyday_News/actions/workflows/main.yml" alt="site"/>
   </a>
 </p>
