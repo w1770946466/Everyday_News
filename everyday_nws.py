@@ -11,19 +11,6 @@ import random
 import os
 from datetime import *
 
-
-
-#随机选择底片
-photo_path = './1920x1080'
-files = os.listdir(photo_path)
-base = random.sample(files,1)[0]
-base_jpg = "./1920x1080/" + base
-
-
-# 天行数据的key
-TX_KEY = '7a451b8515e509232c9bf25a62ef6583'
-
-
 def img():
     # 加载背景图片
     bk_img = cv2.imread(base_jpg)
@@ -137,10 +124,17 @@ def post_tg():
 
 
 if __name__ == '__main__':
-    #global TX_KEY
-    #TX_KEY = os.environ.get("TX_KEY")
+    #随机选择底片
+    photo_path = './1920x1080'
+    files = os.listdir(photo_path)
+    base = random.sample(files,1)[0]
+    base_jpg = "./1920x1080/" + base
+    #天行健key
+    global TX_KEY
+    TX_KEY = os.environ.get("TX_KEY")
     img()
     print("*****图片制作完成*****"+"\n"+"*****正在传输...*****")
+    #tg id 和 token
     global TOKEN,CHAT_ID
     CHAT_ID = os.environ.get("CHAT_ID")
     TOKEN = os.environ.get("TOKEN")
