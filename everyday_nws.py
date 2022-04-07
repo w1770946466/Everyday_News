@@ -111,7 +111,7 @@ def sentence():
     return content
 
 #推送TG图片
-def post_tg(CHAT_ID):
+def post_tg():
     #TOKEN = os.environ.get("TOKEN")
     CHAT_ID = os.environ.get("CHAT_ID")
     #print(TOKEN,CHAT_ID)
@@ -149,5 +149,5 @@ if __name__ == '__main__':
     global TOKEN
     #CHAT_ID = os.environ.get("CHAT_ID")
     TOKEN = os.environ.get("TOKEN")
-    post_tg(CHAT_ID)
+    post_tg()
     
