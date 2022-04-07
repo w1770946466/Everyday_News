@@ -39,7 +39,7 @@ def img():
         draw.text((100,20), news()[0], font=font_small, fill=(255, 255, 255))
     else:
         draw.text((100,20), news()[0], font=font_small, fill=(255, 255, 255))
-        draw.text((900,600), news()[1], font=font_small, fill=(255, 255, 255))
+        draw.text((900,500), news()[1], font=font_small, fill=(255, 255, 255))
     font_red = ImageFont.truetype(fontpath, 40)
     #名句位置
     draw.text((900, 200), verse(), font=font_red, fill=(255, 255, 0))
@@ -124,7 +124,6 @@ def post_tg():
     }
 
     result = requests.post(request_url, params= params, files= files)
-    print(result,params)
     if str(result) =="<Response [200]>":
         print("图片传输完成请注意查收！")
     else:
