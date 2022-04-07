@@ -12,7 +12,7 @@
   <a href="https://raw.githubusercontent.com/w1770946466/Everyday_News/main/LICENSE">
     <img src="https://img.shields.io/github/license/nonebot/nonebot2" alt="LICENSE">
   </a>
-  <a href="https://github.com/nonebot/nonebot2/actions/workflows/website-deploy.yml">
+  <a href="https://github.com/w1770946466/Everyday_News/actions/workflows/website-deploy.yml">
     <img src="https://github.com/nonebot/nonebot2/actions/workflows/website-deploy.yml/badge.svg?branch=master&event=push" alt="site"/>
   </a>
 </p>
