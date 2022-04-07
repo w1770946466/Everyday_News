@@ -9,7 +9,7 @@ from PIL import ImageFont, Image, ImageDraw
 from requests import post
 import random
 import os
-import datetime
+
 
 
 #随机选择底片
@@ -93,6 +93,7 @@ def verse():
 
 # 年月日
 def todayYear():
+    import datetime
     SHA_TZ = timezone(timedelta(hours=8),name='Asia/Shanghai')
     return datetime.datetime.utcnow().replace(tzinfo=timezone.utc).astimezone(SHA_TZ).strftime("%Y年%m月%d日")
 
