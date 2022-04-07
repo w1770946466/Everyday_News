@@ -65,7 +65,6 @@ def news():
             if len(title) > 25:
                 title = title[:25] + '\n   ' + title[25:]
                 new += str(index + 1) + '、' + title + '\n\n'
-            return news,new
         title = news_list[index].get('title')
         if len(title) > 25:
             title = title[:25] + '\n   ' + title[25:]
