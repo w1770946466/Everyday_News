@@ -21,7 +21,7 @@ base_jpg = "./1920x1080/" + base
 
 
 # 天行数据的key
-tx_key = '7a451b8515e509232c9bf25a62ef6583'
+TX_KEY = '7a451b8515e509232c9bf25a62ef6583'
 
 
 def img():
@@ -62,7 +62,7 @@ def img():
 
 # 每日简报
 def news():
-    req_url = 'http://api.tianapi.com/networkhot/index?key=' + tx_key
+    req_url = 'http://api.tianapi.com/networkhot/index?key=' + TX_KEY
     response = requests.get(req_url)
     loads = json.loads(response.text)
     news_list = loads.get('newslist')
@@ -79,7 +79,7 @@ def news():
 
 # 名言
 def verse():
-    req_url = 'http://api.tianapi.com/mingyan/index?key=' + tx_key
+    req_url = 'http://api.tianapi.com/mingyan/index?key=' + TX_KEY
     response = requests.get(req_url)
     loads = json.loads(response.text)
     verse_list = loads.get('newslist')
@@ -101,7 +101,7 @@ def todayYear():
 
 # 精美句子
 def sentence():
-    req_url = 'http://api.tianapi.com/dujitang/index?key=' + tx_key
+    req_url = 'http://api.tianapi.com/dujitang/index?key=' + TX_KEY
     response = requests.get(req_url)
     loads = json.loads(response.text)
     verse_list = loads.get('newslist')
@@ -137,6 +137,8 @@ def post_tg():
 
 
 if __name__ == '__main__':
+    #global TX_KEY
+    #TX_KEY = os.environ.get("TX_KEY")
     img()
     print("*****图片制作完成*****"+"\n"+"*****正在传输...*****")
     global TOKEN,CHAT_ID
