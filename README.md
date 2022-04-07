@@ -5,5 +5,6 @@
 
 # News_Dog
 <div align="center">
-  ## This is News_dog that can push news every day!
+  ✨This is News_dog that can push news every day✨
+  
  
