@@ -48,5 +48,5 @@ jobs:
       - name: "开始运行指定文件"
         env: 
          TOKEN: ${{ secrets.TOKEN }}
-         CHAI_ID: ${{ secrets.CHAT_ID }}
+         CHAT_ID: ${{ secrets.CHAT_ID }}
         run: python3 everyday_nws.py 
