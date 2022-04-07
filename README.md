@@ -6,5 +6,13 @@
 # News_Dog
 <div align="center">
   ✨This is News_dog that can push news every day✨
-  
- 
+</div>
+
+<p align="center">
+  <a href="https://raw.githubusercontent.com/nonebot/nonebot2/master/LICENSE">
+    <img src="https://img.shields.io/github/license/nonebot/nonebot2" alt="license">
+  </a>
+  <a href="https://github.com/nonebot/nonebot2/actions/workflows/website-deploy.yml">
+    <img src="https://github.com/nonebot/nonebot2/actions/workflows/website-deploy.yml/badge.svg?branch=master&event=push" alt="site"/>
+  </a>
+</p>
