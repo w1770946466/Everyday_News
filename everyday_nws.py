@@ -35,7 +35,11 @@ def img():
     #日期位置
     draw.text((900, 55), todayYear(), font=font, fill=(255, 255, 0))
     #新闻位置
-    draw.text((100,20), news(), font=font_small, fill=(255, 255, 255))
+    if news()[1] == None:
+        draw.text((100,20), news()[0], font=font_small, fill=(255, 255, 255))
+    else:
+        draw.text((100,20), news()[0], font=font_small, fill=(255, 255, 255))
+        draw.text((900,600), news()[1], font=font_small, fill=(255, 255, 255))
     font_red = ImageFont.truetype(fontpath, 40)
     #名句位置
     draw.text((900, 200), verse(), font=font_red, fill=(255, 255, 0))
@@ -54,14 +58,19 @@ def news():
     loads = json.loads(response.text)
     news_list = loads.get('newslist')
     news = ''
+    new = ''
     for index in range(len(news_list)):
-        if index > 14:
-            return news
+        if index > 12:
+            title = news_list[index].get('title')
+            if len(title) > 25:
+                title = title[:25] + '\n   ' + title[25:]
+                new += str(index + 1) + '、' + title + '\n\n'
+            return news,new
         title = news_list[index].get('title')
         if len(title) > 25:
             title = title[:25] + '\n   ' + title[25:]
         news += str(index + 1) + '、' + title + '\n\n'
-    return news
+    return news,new
 
 
 # 名言
