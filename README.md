@@ -13,9 +13,6 @@
     <img src="https://img.shields.io/github/license/nonebot/nonebot2" alt="LICENSE">
   </a>
   <img src="https://img.shields.io/badge/python-3.7.3+-blue" alt="python">
-  <a href="https://codecov.io/gh/nonebot/nonebot2">
-    <img src="https://codecov.io/gh/nonebot/nonebot2/branch/master/graph/badge.svg?token=2P0G0VS7N4" alt="codecov"/>
-  </a>
   <a href="https://github.com/w1770946466/Everyday_News/actions/workflows/main.yml">
     <img src="https://github.com/w1770946466/Everyday_News/actions/workflows/main.yml/badge.svg" alt="site"/>
   </a>
