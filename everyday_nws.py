@@ -113,7 +113,7 @@ def sentence():
 #推送TG图片
 def post_tg(CHAT_ID):
     #TOKEN = os.environ.get("TOKEN")
-    #CHAT_ID = os.environ.get("CHAT_ID")
+    CHAT_ID = os.environ.get("CHAT_ID")
     #print(TOKEN,CHAT_ID)
     #TOKEN = "1914492138:AAENFE40dRpcq5tGtNOOdB1vyURoohHCbxQ"
     #CHAT_ID = '1116181878'
@@ -147,7 +147,7 @@ if __name__ == '__main__':
     img()
     print("*****图片制作完成*****"+"\n"+"*****正在传输...*****")
     global TOKEN
-    CHAT_ID = os.environ.get("CHAT_ID")
+    #CHAT_ID = os.environ.get("CHAT_ID")
     TOKEN = os.environ.get("TOKEN")
     post_tg(CHAT_ID)
     
