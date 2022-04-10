@@ -15,6 +15,6 @@ for i in url:
 	for u in url2:
 		print(u)
 		r = requests.get(u)
-		with open(./1920x1080/title[0]+".jpg","wb") as f:
+		with open("./1920x1080/"+title[0]+".jpg","wb") as f:
 			f.write(r.content)
 print("下载完成")
