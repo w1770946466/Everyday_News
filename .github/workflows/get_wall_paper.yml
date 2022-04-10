@@ -1,12 +1,12 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Dress
+name: Get_wall_paper
 
 # Controls when the workflow will run
 on:
   #提交时触发
-  #push:
-  #定时触发每天5点推送
+  push:
+  #定时触发每天0点爬取图片
   schedule:
     - cron: "00 16 * * *"    
   # 允许手动触发
