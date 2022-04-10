@@ -1,6 +1,7 @@
 import requests
 from requests import post
 import parsel
+import os
 
 url = "http://www.weather.com.cn/weather1d/101120111.shtml#input"
 header = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36'}
