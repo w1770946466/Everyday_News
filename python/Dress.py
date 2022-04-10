@@ -48,7 +48,9 @@ params = (
     ('disable_web_page_preview', "yes")
 )
 
-
-telegram_url = "https://api.telegram.org/bot" + TOKEN + "/sendMessage"
-telegram_req = post(telegram_url, params=params)
-print(telegram_req)
+try:
+    telegram_url = "https://api.telegram.org/bot" + TOKEN + "/sendMessage"
+    telegram_req = post(telegram_url, params=params)
+    print(telegram_req)
+except:
+    print("出错了请检查消息是否正确或者TG_ID和TG_TOKEN是否输入正确 ！！")
