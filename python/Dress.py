@@ -49,6 +49,6 @@ params = (
 )
 
 
-telegram_url = "https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage"
+telegram_url = "https://api.telegram.org/bot" + TOKEN + "/sendMessage"
 telegram_req = post(telegram_url, params=params)
 print(telegram_req)
