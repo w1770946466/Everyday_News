@@ -39,6 +39,8 @@ CHAT_ID = os.environ.get("CHAT_ID")	#获取推送消息的CHAT_ID
 
 telegram_message = time+tem+cold+sport+allergy+dress+wash_car+Ultraviolet	#需要推送的信息
 
+print(telegram_message)
+
 params = (
     ('chat_id', CHAT_ID),
     ('text', telegram_message),
@@ -46,9 +48,7 @@ params = (
     ('disable_web_page_preview', "yes")
 )
 
-try:
-	telegram_url = "https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage"
-	telegram_req = post(telegram_url, params=params)
-	print("推送送成功！！")
-except:
-	print("推送失败请检查！！")
+
+telegram_url = "https://api.telegram.org/bot" + TG_TOKEN + "/sendMessage"
+telegram_req = post(telegram_url, params=params)
+print(telegram_req)
