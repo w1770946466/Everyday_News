@@ -40,7 +40,7 @@ Ultraviolet = "😎" + live[5] + ":" + live_state[5] + "\n" + live_des[5]
 TOKEN = os.environ.get("TOKEN")	#获取TG机器人的TOKEN
 CHAT_ID = os.environ.get("CHAT_ID")	#获取推送消息的CHAT_ID
 
-telegram_message = time+tem+cold+sport+allergy+dress+wash_car+Ultraviolet	#需要推送的信息
+telegram_message = region+time+status+tem+cold+sport+allergy+dress+wash_car+Ultraviolet	#需要推送的信息
 
 print(telegram_message)
 
