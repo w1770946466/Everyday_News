@@ -42,5 +42,4 @@ jobs:
         env: 
          TOKEN: ${{ secrets.TOKEN }}
          CHAT_ID: ${{ secrets.CHAT_ID }}
-         TX_KEY: ${{ secrets.TX_KEY }}
         run: python3 Dress.py 
