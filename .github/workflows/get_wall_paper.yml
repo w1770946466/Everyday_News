@@ -5,7 +5,7 @@ name: Get_wall_paper
 # Controls when the workflow will run
 on:
   #提交时触发
-  #push:
+  push:
   #定时触发每天0点爬取图片
   schedule:
     - cron: "00 16 * * *"    
@@ -49,5 +49,5 @@ jobs:
       - name: Push change
         uses: ad-m/github-push-action@master
         with: 
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GIT_TOKEN }}
         
