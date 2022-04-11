@@ -1,6 +1,7 @@
 import requests
 import parsel
 import os
+import time
 import random
 
 
@@ -16,28 +17,27 @@ def main():
 		get_wall_paper(url1)
 
 def get_wall_paper(url):
-	response = requests.get(url)
+	response = requests.get(url,headers = header)
 	selector = parsel.Selector(response.text)
 	url2 = selector.css('.preview::attr(href)').getall()#获取所有图片源地址
 	print("当前页面共有{0}张图片".format(len(url)))
 	for i in url2:
-		re = requests.get(i)
-		print(re)
+		re = requests.get(i,headers = header)
 		selector2 = parsel.Selector(re.text)
-		print()
 		url3 = selector2.css('#wallpaper::attr(src)').getall()
-		print("1")
 		title = selector2.css('title::text').get()
-		print("2")
 		title = title.split(',')
-		print(title)
 		for u in url3:
 			print(u)
 			r = requests.get(u)
 			with open(r"./1920x1080/"+title[0]+".jpg","wb") as f:
 				f.write(r.content)
 				f.close()
+				time.sleep(1)
 			#print("下载完成请注意查看！！")
 if __name__ == '__main__':
+	header = {
+		'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.75 Safari/537.36',
+	}
 	main()
 	print("恭喜你！下载已经全部完成了！！")
