@@ -43,7 +43,7 @@ jobs:
         run: |
           git config --global user.email 1770946466@qq.com
           git config --global user.name w1770946466
-          git add "*.jpg"
+          git add "1920x1080"
           git commit -m "update wall paper"
           
       - name: Push change
