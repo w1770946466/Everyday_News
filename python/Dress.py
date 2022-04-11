@@ -20,7 +20,10 @@ live_time = selector.css('h1 i::text').get()#更新时间
 live_status = selector.css('#hidden_title::attr(value)').get() #04月10日08时 周日  晴  31/22°C
 status = live_status.split("  ")#用两个英文空格分割
 
-live_tem = selector.css('.tem span::text').getall()#最高最底气温
+live_tem = selector.css('#hidden_title::attr(value)').get()#最高最底气温[0]为最低[-1]为最高
+tem = live_tem.split("  ")
+tem = tem[-1].split("/")
+
 live = selector.css('.livezs .clearfix li em::text').getall()#生活指数
 live_state = selector.css('.livezs .clearfix li span::text').getall()#生活指数优劣
 live_des = selector.css('.livezs .clearfix li p::text').getall()#生活指数建议
@@ -28,7 +31,7 @@ live_des = selector.css('.livezs .clearfix li p::text').getall()#生活指数建
 region = "🏰" + district[0] + "\n\n"
 time = "🌏" + "今日更新时间："+ live_time + "\n\n"
 status = "🌕" + "大多数网友报告的天气状况是：" + status[1] + "\n\n"
-tem = "🌞" + "今日最高气温："+ live_tem[0] + "℃" + "\n" + "🌤今日最低气温：" + live_tem[1] + "℃" + "\n\n"
+tem = "🌞" + "今日最高气温："+ tem[-1] + "\n" + "🌤今日最低气温：" + live_tem[0] + "℃" + "\n\n"
 cold = "🤧" + live[0] + ":" + live_state[0] + "\n" + live_des[0] + "\n\n"
 sport = "🏃" + live[1] + ":" + live_state[1] + "\n" + live_des[1] + "\n\n"
 allergy = "😖" + live[2] + ":" + live_state[2] + "\n" + live_des[2] + "\n\n"
