@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 def main():
 	pages = []
-	while (len(pages)<10): #随机获取10个不相等的
+	while (len(pages)<3): #随机获取10个不相等的
 		page = random.randint(1,12380)
 		if page not in pages:
 			pages.append(page)
@@ -29,7 +29,7 @@ def get_wall_paper(url):
 		title = selector2.css('title::text').get()
 		title = title.split(',')
 		for u in url3:
-			#print(u)
+			print(u)
 			r = requests.get(u)
 			with open(r"./1920x1080/"+title[0]+".jpg","wb") as f:
 				f.write(r.content)
