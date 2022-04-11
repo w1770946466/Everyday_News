@@ -22,10 +22,15 @@ def get_wall_paper(url):
 	print("当前页面共有{0}张图片".format(len(url)))
 	for i in url2:
 		re = requests.get(i)
+		print(re)
 		selector2 = parsel.Selector(re.text)
+		print()
 		url3 = selector2.css('#wallpaper::attr(src)').getall()
+		print("1")
 		title = selector2.css('title::text').get()
+		print("2")
 		title = title.split(',')
+		print(title)
 		for u in url3:
 			print(u)
 			r = requests.get(u)
