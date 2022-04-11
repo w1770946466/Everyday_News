@@ -1,9 +1,7 @@
 import requests
 import parsel
 import os
-import datetime
 import random
-from tqdm import tqdm
 
 
 def main():
@@ -21,7 +19,7 @@ def get_wall_paper(url):
 	response = requests.get(url)
 	selector = parsel.Selector(response.text)
 	url2 = selector.css('.preview::attr(href)').getall()#获取所有图片源地址
-	#print("当前页面共有{0}张图片".format(len(url)))
+	print("当前页面共有{0}张图片".format(len(url)))
 	for i in url2:
 		re = requests.get(i)
 		selector2 = parsel.Selector(re.text)
@@ -33,6 +31,7 @@ def get_wall_paper(url):
 			r = requests.get(u)
 			with open(r"./1920x1080/"+title[0]+".jpg","wb") as f:
 				f.write(r.content)
+				f.close()
 			#print("下载完成请注意查看！！")
 if __name__ == '__main__':
 	main()
