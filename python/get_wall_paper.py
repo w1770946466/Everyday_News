@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 def main():
 	pages = []
-	while (len(pages)<5): #随机获取10个不相等的
+	while (len(pages)<2): #随机获取2个不相等的
 		page = random.randint(1,12380)
 		if page not in pages:
 			pages.append(page)
