@@ -22,7 +22,7 @@ def get_wall_paper(url):
 	selector = parsel.Selector(response.text)
 	url2 = selector.css('.preview::attr(href)').getall()#获取所有图片源地址
 	#print("当前页面共有{0}张图片".format(len(url)))
-	for i in tqdm(url2):
+	for i in url2:
 		re = requests.get(i)
 		selector2 = parsel.Selector(re.text)
 		url3 = selector2.css('#wallpaper::attr(src)').getall()
