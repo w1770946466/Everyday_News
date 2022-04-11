@@ -5,12 +5,15 @@ name: Get_wall_paper
 # Controls when the workflow will run
 on:
   #提交时触发
-  push:
+  #push:
   #定时触发每天0点爬取图片
   schedule:
     - cron: "00 16 * * *"    
   # 允许手动触发
   workflow_dispatch:
+  
+env:
+  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,4 +37,17 @@ jobs:
       - name: "安装依赖包"
         run: pip install -r ./requirements.txt
       - name: "开始运行图片爬取程序"
-        run: python3 ./python/get_wall_paper.py 
+        run: python3 ./python/get_wall_paper.py
+        
+      - name: commit
+        run: |
+          git config --global user.email 1770946466@qq.com
+          git config --global user.name w1770946466
+          git add "*.jpg"
+          git commit -m "update wall paper"
+          
+      - name: Push change
+        uses: ad-m/github-push-action@master
+        with: 
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        
