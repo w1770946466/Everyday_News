@@ -25,10 +25,10 @@ def get_wall_paper(url):
 	for i in tqdm(url2):
 		re = requests.get(i)
 		selector2 = parsel.Selector(re.text)
-		url2 = selector2.css('#wallpaper::attr(src)').getall()
+		url3 = selector2.css('#wallpaper::attr(src)').getall()
 		title = selector2.css('title::text').get()
 		title = title.split(',')
-		for u in url2:
+		for u in url3:
 			#print(u)
 			r = requests.get(u)
 			with open(r"./1920x1080/"+title[0]+".jpg","wb") as f:
