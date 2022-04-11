@@ -47,7 +47,7 @@ jobs:
           git commit -m "update wall paper"
           
       - name: Push change
-        uses: ad-m/github-push-action@master/log
+        uses: ad-m/github-push-action@master/Everyday_News/log
         with: 
           github_token: ${{ secrets.GIT_TOKEN }}
         
