@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Get_wall_paper
+
+# Controls when the workflow will run
+on:
+  #提交时触发
+  #push:
+  #定时触发每天点爬取图片
+  schedule:
+    - cron: "00 14 * * *"    
+  # 允许手动触发
+  workflow_dispatch:
+  
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      #将本仓库克隆到Actions运行环境
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # 设置运行环境
+      - name: "设置python3.8环境"
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+   
+      - name: "安装依赖包"
+        run: pip install -r ./requirements.txt
+      - name: "开始运行get_Monitor"
+        env: 
+          TOKEN: ${{ secrets.TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: python3 ./python/get_Monitor.py
+        
+
+        
