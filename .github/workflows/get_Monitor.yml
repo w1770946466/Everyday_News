@@ -5,10 +5,10 @@ name: get_Monitor
 # Controls when the workflow will run
 on:
   #提交时触发
-  push:
+  #push:
   #定时触发每天6点、11点、18点推送
   schedule:
-    - cron: "00 22,3,10 * * *"    
+    - cron: "00 14,15,16 * * *"    
   # 允许手动触发
   workflow_dispatch:
 
