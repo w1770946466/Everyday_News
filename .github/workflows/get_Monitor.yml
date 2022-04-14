@@ -6,9 +6,9 @@ name: get_Monitor
 on:
   #提交时触发
   #push:
-  #定时触发每天6点、11点、18点推送
+  #定时触发每天6点推送
   schedule:
-    - cron: "00 6,7,8 * * *"    
+    - cron: "00 22 * * *"    
   # 允许手动触发
   workflow_dispatch:
 
