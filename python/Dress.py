@@ -24,11 +24,11 @@ html = requests.get(url,headers= header)
 html.encoding = html.apparent_encoding
 selector = parsel.Selector(html.text)
 #print(selector)
-tem = selector.css('script::text').getall()[1]
+temp = selector.css('script::text').getall()[1]
 #将字符串转字典
-tem = tem.replace("var observe24h_data = ",'')
-tem = tem.replace(";", '')
-js = json.loads(tem)#字符串转json
+temp = temp.replace("var observe24h_data = ",'')
+temp = temp.replace(";", '')
+js = json.loads(temp)#字符串转json
 #print(js['od']["od2"])
 lose_tem = []
 most_tem = []
@@ -37,7 +37,7 @@ for i in js['od']["od2"]:
     most_tem.append(i["od22"])
     #print("最低温度"+i["od21"]+"  /最高温"+i["od22"])
 # print(lose_tem,"\n",most_tem)
-# print(max(lose_tem),max(most_tem))
+print(max(lose_tem),max(most_tem))
 
 live = selector.css('.livezs .clearfix li em::text').getall()#生活指数
 #print(live)
@@ -58,7 +58,7 @@ allergy = "😖" + live[2] + ":" + live_state[2] + "\n" + live_des[2] + "\n\n"
 dress = "👕" + live[3] + ":" + live_state[3] + "\n" + live_des[3] + "\n\n"
 wash_car = "🚗" + live[4] + ":" + live_state[4] + "\n" + live_des[4] + "\n\n"
 Ultraviolet = "😎" + live[5] + ":" + live_state[5] + "\n" + live_des[5]
-
+print(tem)
 
 TOKEN = os.environ.get("TOKEN")	#获取TG机器人的TOKEN
 CHAT_ID = os.environ.get("CHAT_ID")	#获取推送消息的CHAT_ID
