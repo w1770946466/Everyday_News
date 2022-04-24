@@ -37,7 +37,7 @@ for i in js['od']["od2"]:
     most_tem.append(i["od22"])
     #print("最低温度"+i["od21"]+"  /最高温"+i["od22"])
 # print(lose_tem,"\n",most_tem)
-print(max(lose_tem),max(most_tem))
+#print(max(lose_tem),max(most_tem))
 
 live = selector.css('.livezs .clearfix li em::text').getall()#生活指数
 #print(live)
@@ -58,9 +58,9 @@ allergy = "😖" + live[2] + ":" + live_state[2] + "\n" + live_des[2] + "\n\n"
 dress = "👕" + live[3] + ":" + live_state[3] + "\n" + live_des[3] + "\n\n"
 wash_car = "🚗" + live[4] + ":" + live_state[4] + "\n" + live_des[4] + "\n\n"
 Ultraviolet = "😎" + live[5] + ":" + live_state[5] + "\n" + live_des[5]
-print(tem)
 
-TOKEN = os.environ.get("TOKEN")	#获取TG机器人的TOKEN
+
+TG_TOKEN = os.environ.get("TOKEN")	#获取TG机器人的TOKEN
 CHAT_ID = os.environ.get("CHAT_ID")	#获取推送消息的CHAT_ID
 
 telegram_message = time+tem+cold+sport+allergy+dress+wash_car+Ultraviolet	#需要推送的信息
