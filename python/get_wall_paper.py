@@ -20,9 +20,9 @@ class wzry(object):
                 response = request.urlopen(req)
                 #print(response)
                 data = response.read()
-                print(data)
+                #print(data)
                 list_data = eval(data)['List']
-                print(list_data)
+                #print(list_data)
                 for ls in list_data:
                     # 抓取图片url并替换特殊符号
                     sProdImgNo_6 = ls['sProdImgNo_6'].replace('%3A', ':').replace(
