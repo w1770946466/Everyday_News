@@ -8,7 +8,7 @@ on:
   #push:
   #定时触发每天6点推送
   schedule:
-    - cron: "00 22,23,0,1 * * *"    
+    - cron: "00 22 * * *"    
   # 允许手动触发
   workflow_dispatch:
 
