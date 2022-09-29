@@ -1,4 +1,5 @@
-let ele = '<head>';
-let eleReplace = '<head><link rel="stylesheet" href="https://raw.githubusercontent.com/w1770946466/Everyday_News/main/black-AD/55dy/AntiAD-555dy.css" type="text/css" />'
-    .replace(ele, eleReplace)
-$done({ body });
+let Oldone = '</style>'
+let Newone = 'a[href="https://75655128.com:9999"]{display:none!important}</style>';
+let body = $response.body
+.replace(Oldone, Newone);
+$done({body});
