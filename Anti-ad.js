@@ -1,1 +1,8 @@
-a[href="https://tz.kefuyuming.vip/3663.html"]{display:none!important}a[href="https://www.87604411.com:9999/?channelCode=007"]{display:none!important}a[href="https://75655128.com:9999"]{display:none!important}
+let rHead = '<head>'
+let newStyle = '<head><link rel=\"stylesheet\" href=\"https://limbopro.com/CSS/baidu.css\" type=\"text/css\">'
+var rBody = '</body>'
+var newJavaScript = '<script type="text/javascript" async="async" src="//limbopro.com/Adguard/baidu.js"></script>'
+let body = $response.body
+    .replace(rHead, newStyle)
+    .replace(rBody, newJavaScript);
+$done({ body });
