@@ -1,5 +1,3 @@
-let Oldone = '</style>'
-let Newone = 'a[href="https://www.03482072.com:9999/?channelCode=007"],a[href="https://50935410.com/?channelCode=838"] {display:none!important}';
-let body = $response.body
-.replace(Oldone, Newone);
-$done({body});
+var body = $response.body
+    .replace(/<head>/, '<head><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/ddgksf2013/Cuttlefish/Html/CSS/555.css" type="text/css">');
+$done({ body });
