@@ -139,6 +139,7 @@ if __name__ == '__main__':
     #天行健key
     global TX_KEY
     TX_KEY = os.environ.get("TX_KEY")
+    print(TX_KEY)
     img()
     print("*****图片制作完成*****"+"\n"+"*****正在传输...*****")
     #tg id 和 token
