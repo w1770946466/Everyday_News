@@ -8,7 +8,7 @@ import requests
 
 
 QQ_MODE = "CHINA"
-with open(r'.\OIP.jpg','rb') as f:
+with open(r'./OIP.jpg','rb') as f:
     img_buffer = f.read()
 
 
