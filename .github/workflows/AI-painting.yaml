@@ -34,5 +34,5 @@ jobs:
     - name: 执行任务
       run: |
 
-        python ./AI_Paiting.py
+        python ./AI_Painting.py
       
