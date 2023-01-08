@@ -1,4 +1,4 @@
-name: sub_merge
+name: AI
 
 # 触发条件
 on:
@@ -34,5 +34,5 @@ jobs:
     - name: 执行任务
       run: |
 
-        python ./AI_paiting.py
+        python ./AI_Paiting.py
       
