@@ -1,0 +1,70 @@
+import base64
+import uuid
+import json
+import hashlib
+import urllib.parse
+import requests
+
+
+
+QQ_MODE = "CHINA"
+with open(r'C:\Users\木倾\Desktop\NewPro\V2raytoClash\OIP.jpg','rb') as f:
+    img_buffer = f.read()
+
+
+# img_buffer =Image.open(r'C:\Users\木倾\Desktop\NewPro\V2raytoClash\OIP.jpg').tobytes()
+
+
+def qq_request(img_buffer):
+    v4uuid = str(uuid.uuid4())
+    images = base64.b64encode(img_buffer).decode()
+
+    data_report = {
+        'parent_trace_id': v4uuid,
+        'root_channel': '',
+        'level': 0
+    }
+
+    obj = {
+        'busiId': 'ai_painting_anime_entry',
+        'images': [
+            images,
+        ],
+        'extra': json.dumps({
+            'face_rects': [],
+            'version': 2,
+            'platform': 'web',
+            'data_report': data_report
+        })
+    }
+    print(images)
+    sign = signV1(obj)
+    url = "https://ai.tu.qq.com/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process"
+    headers = {
+        'Content-Type': 'application/json',
+        'Origin': 'https://h5.tu.qq.com',
+        'Referer': 'https://h5.tu.qq.com/web/ai-2d/cartoon/index?jump_qq_for_play=true',
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36',
+        'x-sign-value': sign,
+        'x-sign-version': 'v1'
+    }
+
+    timeout = 30000
+    # print(type(obj))
+    print(sign)
+    # print(obh)
+    response = requests.post(url, json = obj, headers = headers, timeout = timeout)
+    data = response.json() or {}
+    print(data)
+    #return json.loads(data)
+
+
+
+def signV1(obj):
+    s = json.dumps(obj)
+    #print(str(len(s) + len(urllib.parse.quote(s))).encode())
+    return hashlib.md5(
+        b'https://h5.tu.qq.com' + str(len(s) + len(urllib.parse.quote(s))).encode() + b'HQ31X02e'
+    ).hexdigest()
+
+qq_request(img_buffer)
