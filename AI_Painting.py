@@ -26,7 +26,7 @@ def qq_request(img_buffer):
     }
 
     obj = {
-        'busiId': 'ai_painting_anime_entry',
+        'busiId': 'different_dimension_me_img_entry',#'ai_painting_anime_entry',
         'images': [
             images,
         ],
