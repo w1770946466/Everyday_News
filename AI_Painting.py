@@ -1,4 +1,4 @@
-import base64
+yimport base64
 import uuid
 import json
 import hashlib
@@ -37,7 +37,7 @@ def qq_request(img_buffer):
             'data_report': data_report
         })
     }
-    print(images)
+    #print(images)
     sign = signV1(obj)
     url = "https://ai.tu.qq.com/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process"
     headers = {
@@ -62,9 +62,9 @@ def qq_request(img_buffer):
 
 def signV1(obj):
     s = json.dumps(obj)
-    #print(str(len(s) + len(urllib.parse.quote(s))).encode())
+    #print(str(len(s)).encode())
     return hashlib.md5(
-        b'https://h5.tu.qq.com' + str(len(s) + len(urllib.parse.quote(s))).encode() + b'HQ31X02e'
+        b'https://h5.tu.qq.com' + str(len(s)).encode() + b'HQ31X02e'
     ).hexdigest()
 
 qq_request(img_buffer)
