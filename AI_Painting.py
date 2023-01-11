@@ -20,7 +20,7 @@ def qq_request(img_buffer):
     images = base64.b64encode(img_buffer).decode()
 
     data_report = {
-        'parent_trace_id': v4uuid,
+        'parent_trace_id': '4c689320-71ba-1909-ab57-13c0804d4cc6',
         'root_channel': '',
         'level': 0
     }
