@@ -57,9 +57,10 @@ def qq_request(img_buffer):
     proxies = {
         "http":"http://27.42.168.46:55481",
     }
-    response = requests.post(url, json = json.dumps(obj), headers = headers, proxies=proxies, timeout = timeout)
+    response = requests.post(url, json = obj, headers = headers, proxies=proxies, timeout = timeout)
     data = response.json() or {}
     print(data)
+    print(obj)
     #return json.loads(data)
 
 
