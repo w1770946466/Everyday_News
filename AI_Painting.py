@@ -39,8 +39,8 @@ def qq_request(img_buffer):
     }
     #print(images)
     sign = signV1(obj)
-    url = "https://ai.tu.qq.com/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process"
-    #url = "https://ai.tu.qq.com/overseas/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process"
+    #url = "https://ai.tu.qq.com/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process"
+    url = "https://ai.tu.qq.com/overseas/trpc.shadow_cv.ai_processor_cgi.AIProcessorCgi/Process"
     headers = {
         'Content-Type': 'application/json',
         'Origin': 'https://h5.tu.qq.com',
@@ -60,7 +60,7 @@ def qq_request(img_buffer):
     response = requests.post(url, json = obj, headers = headers, proxies=proxies, timeout = timeout)
     data = response.json() or {}
     print(data)
-    print(obj)
+    print(type(obj))
     #return json.loads(data)
 
 
