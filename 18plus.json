@@ -1933,8 +1933,7 @@
 			"name": "semao",
 			"type": 1,
 			"url": "https://jiexi.99mao.xyz/m3u8/?url="
-		},
-
+		}
 	],
 	"ijk": [{
 			"group": "软解码",
