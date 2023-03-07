@@ -38,7 +38,7 @@ jobs:
         git config --local user.email '${{ secrets.EMAIL }}'
         git config --local user.name '${{ secrets.NAME }}'
         git pull origin main
-        git add ./XXQG_TiKu/question
+        git add ./XXQG_TiKu/*
     - name: 推送更改
       uses:  ad-m/github-push-action@master
       with:
