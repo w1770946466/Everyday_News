@@ -3,7 +3,7 @@ name: AI
 # 触发条件
 on:
   workflow_dispatch:
-  push:
+  #push:
   #schedule:
     # - cron: '*/5 * * * *'
     # 表达式生成  https://crontab.guru/
