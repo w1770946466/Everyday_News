@@ -61,7 +61,7 @@ for key, value in json_data.items():
         elif len(pie) == 5:
             strt = options + " " + topic + " " + \
                 pie[1] + "	" + pie[2] + "	" + pie[3] + "	" + pie[4]
-    f = open('.\question', 'a', encoding='utf8')
+    f = open('./XXQG_TiKu/question', 'a', encoding='utf8')
     f.write(strt + "\n")
     f.close()
     i = i + 1
