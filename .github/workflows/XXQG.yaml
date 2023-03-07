@@ -35,6 +35,9 @@ jobs:
         python ./XXQG_TiKu/json_to_question.py
     - name: 提交更改
       run: |
+        git config --local user.email '${{ secrets.EMAIL }}'
+        git config --local user.name '${{ secrets.NAME }}'
+        git pull origin main
         git add ./XXQG_TiKu/question
     - name: 推送更改
       uses:  ad-m/github-push-action@master
