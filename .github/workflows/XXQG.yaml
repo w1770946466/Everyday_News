@@ -38,8 +38,8 @@ jobs:
         git config --local user.email '${{ secrets.EMAIL }}'
         git config --local user.name '${{ secrets.NAME }}'
         git pull origin main
-        git add ./XXQG_TiKu/*
-        git commit -m "$(date '+%Y-%m-%d %H:%M:%S') sub_merge_node"
+        git add ./XXQG_TiKu/question
+        git commit -m "$(date '+%Y-%m-%d %H:%M:%S')"
     - name: 推送更改
       uses:  ad-m/github-push-action@master
       with:
