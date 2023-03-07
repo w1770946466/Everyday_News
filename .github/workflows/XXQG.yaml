@@ -30,15 +30,19 @@ jobs:
     - name: 安装依赖
       run: |
         pip install -r ./XXQG_TiKu/requirements.txt
-    - name: 执行任务
+    - name: 执行任务1
       run: |
         python ./XXQG_TiKu/json_to_question.py
+    - name: 执行任务2
+      run: |
+        python ./XXQG_TiKu/json_to_sql.py
     - name: 提交更改
       run: |
         git config --local user.email '${{ secrets.EMAIL }}'
         git config --local user.name '${{ secrets.NAME }}'
         git pull origin main
         git add ./XXQG_TiKu/question
+        git add ./XXQG_TiKu/QuestionBank.db
         git commit -m "$(date '+%Y-%m-%d %H:%M:%S')"
     - name: 推送更改
       uses:  ad-m/github-push-action@master
