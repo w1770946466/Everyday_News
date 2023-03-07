@@ -31,6 +31,6 @@ for key, value in json_data.items():
         time.strftime('%Y-%m-%d %H:%M:%S',time.localtime(time.time())) + "');"
 # 睿智
 #        print(str)
-    f = open('.\QuestionBank.sql', 'a', encoding='utf8')
+    f = open('.\QuestionBank.db', 'a', encoding='utf8')
     f.write('\n' + str)
     f.close()
