@@ -90,7 +90,7 @@ if (account.length != pwd.length) {//判断账号密码输入数量是否相同
     console.log("输入有误，请检查后重新输入，脚本结束")
     exit();
 } else {
-    console.log("输入正确开始启动运行")
+    console.info("输入正确开始启动运行")
 }
 
 main()//运行脚本
@@ -222,7 +222,7 @@ function start_XXQG() {
         console.setSize(device.width / 1.5, device.height / 5)//大小
         console.setPosition(-device.width / 32, -device.height / 25);//位置
         if (siren == true || shuangren == true) {
-            console.error('正在获取截图权限，并检查ocr配置是否正确');
+            console.info('正在获取截图权限，并检查ocr配置是否正确');
             if (choose == 'b') get_ocr();
             else if (choose == 'a') {
                 token = get_token();
