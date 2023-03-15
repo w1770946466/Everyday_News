@@ -79,14 +79,14 @@ var o1 = ['A', 'B', 'C', 'D', 'AAAA'];
 var download = null;//执行完毕或超时
 var commentText = ["歌颂共产党,永远跟党走。", "为中华崛起而读书！", "倡导富强、民主、文明、和谐", "自由，平等，公正，法治", "不忘初心，牢记使命", "努力奋斗，回报祖国！", "坚守信念，不负期望"]; //评论内容，可自行修改，大于5个字便计分
 var ta = hamibot.env.alltime * 1;//最大运行时间
-if (!ta || ta <= 0) ta = 1500;
+if (!ta || ta <= 0) ta = 1500;//判断输入时间是否符合规范
 var thread = null;//计时线程
 var suijishu = 2//是否第一次不答题2为False，1为true
 var phone = hamibot.env.account//输入手机号（base64编码）
 var password_phone = hamibot.env.pwd//输入密码（base64编码）
 var account = phone.split(',')//多账号用英文逗号","
 var pwd = password_phone.split(',')//多密码用英文逗号","
-if (account.length != pwd.length) {
+if (account.length != pwd.length) {//判断账号密码输入数量是否相同
     console.log("输入有误，请检查后重新输入，脚本结束")
     exit();
 } else {
@@ -218,7 +218,9 @@ function get_hamibot_ocr() {
  */
 function start_XXQG() {
     if (shuangren == true || siren == true || 订阅 != 'a' || stronger != 'a' || tiaozhan) {
-        console.show();
+        console.show();//显示
+        console.setSize(device.width / 1.5, device.height / 5)//大小
+        console.setPosition(-device.width / 32, -device.height / 25);//位置
         if (siren == true || shuangren == true) {
             console.error('正在获取截图权限，并检查ocr配置是否正确');
             if (choose == 'b') get_ocr();
@@ -762,7 +764,7 @@ function video_news(tmp) {
     s.click();
     console.info('改变提示框位置');
     delay(1);
-    console.setPosition(device.width / 4, -device.height / 4);
+    console.setPosition(-device.width / 32, -device.height / 25);
     for (var i = 0; i < vCount; i++) {
         if (textContains("电视台").exists()) {
             console.log("即将学习第" + (i + 1) + "个视频!");
@@ -781,7 +783,7 @@ function video_news(tmp) {
             console.error("等待电视台->看电视界面");
         }
     }
-    console.setPosition(0, device.height / 2);
+    console.setPosition(-device.width / 32, -device.height / 25);
     delay(2);
     //back();
 }
@@ -825,7 +827,7 @@ function listenToRadio() {
  * @return: null
  */
 function start_app() {
-    console.setPosition(0, device.height / 2); //部分华为手机console有bug请注释本行
+    console.setPosition(-device.width / 32, -device.height / 25); //部分华为手机console有bug请注释本行
     console.show(); //部分华为手机console有bug请注释本行
     console.log("将手机音量静音");
     device.setMusicVolume(0)
@@ -1631,7 +1633,7 @@ function click_answer(answer) {
  */
 function dailyAnswer() {
     console.info("开始答题");
-    console.setPosition(0, 0);
+    console.setPosition(0, -device.height / 18);
     delay(1);
     let dlNum = 0; //每日答题轮数
     var flag = true;
@@ -1694,7 +1696,7 @@ function dailyAnswer() {
             break;
         }
     }
-    console.setPosition(0, device.height / 2);
+    console.setPosition(-device.width / 32, -device.height / 25);
 }
 
 ////////////////////////////挑战答题模块功能////////////////////////
@@ -2641,7 +2643,7 @@ function zsyAnswer() {
     else baidu_ocr_api(img, token);
     var count = 2;
     console.info('改变提示框位置');
-    console.setPosition(device.width / 4, -device.height / 4);
+    console.setPosition(0, -device.height / 18);
     for (var i = 0; i < count; i++) {
         sleep(random_time(delay_time));
         if (text("随机匹配").exists()) {
@@ -3188,7 +3190,7 @@ function 双人() {
         }
         zsyAnswer();
         delay(1);
-        console.setPosition(0, device.height / 2);
+        console.setPosition(-device.width / 32, -device.height / 25);
         back_table();
     }
 }
@@ -3240,7 +3242,7 @@ function 四人() {
         }
         zsyAnswer();
         delay(0.5);
-        console.setPosition(0, device.height / 2);
+        console.setPosition(-device.width / 32, -device.height / 25);
         back_table();
     }
 }
