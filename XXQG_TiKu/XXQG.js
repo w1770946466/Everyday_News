@@ -2775,7 +2775,14 @@ function rt() {
         console.log('设置脚本运行最长时间为：' + ta + 's');
         device.keepScreenOn(ta * 1000 + 60000);
         thread = threads.start(function () {
-            rand_mode();
+            while (true):
+                if (text('访问异常').exists() && !textContains("非常抱歉").exists()) {
+                    console.log("检测到滑块验证");
+                    device.vibrate(1000);
+                    sleep(10000);
+                } else{
+                    rand_mode();
+                }
         })
         thread.join(ta * 1000);
         thread.interrupt();
