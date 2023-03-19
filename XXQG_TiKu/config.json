@@ -220,10 +220,12 @@
     "label": "输入手机号",
     "type": "textarea",
     "name": "account"
+    "help": "注：多账号用英文逗号隔开，账号密码必须一一对应顺序不能错"
   },
   {
     "label": "输入密码",
     "type": "textarea",
     "name": "pwd"
+    "help": "注：多账号用英文逗号隔开，账号密码必须一一对应顺序不能错"
   }
 ]
