@@ -2795,9 +2795,7 @@ function rt() {
         delay(20);
         while (!id("btn_reg").exists() && !desc("工作").exists()) {
             num++
-            back();
-            toast(' ');
-            delay(3);
+            back_table();
             if (num > 5) break;
         }
         if (num > 5) break;
