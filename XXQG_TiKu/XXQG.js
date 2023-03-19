@@ -90,7 +90,7 @@ if (account.length != pwd.length) {//判断账号密码输入数量是否相同
     console.log("输入有误，请检查后重新输入，脚本结束")
     exit();
 } else {
-    console.info("输入正确开始启动运行")
+    console.log("输入正确开始启动运行")
 }
 
 main()//运行脚本
@@ -1372,6 +1372,11 @@ function dailyQuestionLoop() {
             break;
         }
         log('等待题目出现');
+        if (text('访问异常').exists()) {
+            console.log("检测到滑块验证");
+            device.vibrate(1000)
+            sleep(7000);
+        }
         delay(5);
         if (text("重试").exists()) {
             click("重试");
@@ -2598,7 +2603,7 @@ function zsyAnswer() {
             }
         }
         //var suijishu = randomNum(1, 2)
-        
+
         if (suijishu == 1) {
             while (!text('继续挑战').exists()) {
                 console.log("第一局不答题，老是遇到神仙，等待第二局答题");
@@ -2775,15 +2780,7 @@ function rt() {
         console.log('设置脚本运行最长时间为：' + ta + 's');
         device.keepScreenOn(ta * 1000 + 60000);
         thread = threads.start(function () {
-            while (true) {
-                if (text('访问异常').exists() && !textContains("非常抱歉").exists()) {
-                    console.log("检测到滑块验证");
-                    device.vibrate(1000);
-                    sleep(10000);
-                } else{
-                    rand_mode();
-                }
-            }
+            rand_mode();
         })
         thread.join(ta * 1000);
         thread.interrupt();
@@ -2898,7 +2895,7 @@ function rand_mode() {
     // 最后拼接字符串，得到一个格式为(yyyy-MM-dd)的日期
     var nowDate = date.getFullYear() + seperator + nowMonth + seperator + strDate;
     console.setGlobalLogConfig({ "file": "/sdcard/脚本/" + nowDate + "运行日志.txt" });//存储运行日志
-    
+
     var newarray = account.map(myFunction)
     function myFunction(num) {
         if (!id("btn_reg").exists()) {
