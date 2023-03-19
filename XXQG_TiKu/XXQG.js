@@ -219,6 +219,7 @@ function get_hamibot_ocr() {
 function start_XXQG() {
     if (shuangren == true || siren == true || 订阅 != 'a' || stronger != 'a' || tiaozhan) {
         console.show();//显示
+        sleep(5)
         console.setSize(device.width / 1.5, device.height / 5)//大小
         console.setPosition(-device.width / 32, -device.height / 25);//位置
         if (siren == true || shuangren == true) {
@@ -632,6 +633,7 @@ function videoStudy_news(tmp) {
     var v = className('android.widget.FrameLayout').clickable(true).depth(24).findOne().bounds();
     press(v.centerX(), v.centerY(), 150);
     delay(1);
+    click(device.width / 2, device.height / 3)
     for (var i = 0; i < vCount;) {
         if (textContains("分享").exists()) {
             console.log("即将学习第" + (i + 1) + "个视频!");
@@ -666,6 +668,7 @@ function new_bailing_video(tmp) {
         click("百灵");
         delay(1)
     }
+    click(device.width / 2, device.height / 3);
     for (var i = 0; i < vCount;) {
         if (textContains("百灵").exists()) {
             try {
