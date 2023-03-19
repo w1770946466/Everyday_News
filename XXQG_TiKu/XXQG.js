@@ -993,50 +993,66 @@ function sub() {
     console.info('改变文本框位置');
     console.setPosition(0, 0.67 * y)
     ending:
-    for (i = 0; i < 16; i++) {//i是a中的数
+    for (i = 0; i < 15; i++) {//i是a中的数
         sleep(1000);
         //console.info(a[i+2]);
         if (i >= a.length) {
             click(x * 0.6, y * 0.08);//点击地方平台
             sleep(1000);
             click(0.1 * x, y / a[i - 10]);
-        } else if (i > 15) {
+        } else if (i > 14) {
             console.info('没有找到可订阅的，退出');
             break ending;
         } else {
             click(0.1 * x, y / a[i]);//点击左侧推荐、上新啥的依次循环
         }
         sleep(1000)
-        if (i == 1){
+        //判断向下滑几次
+        if (i == 0) {
             isfind = 26;
+            console.log("推荐");
+        } else if (i == 1) {
+            isfind = 27;
+            console.log("上新");
         } else if (i == 2) {
-            isfind = 27;
+            isfind = 22;
+            console.log("主要央媒");
         } else if (i == 3) {
-            isfind = 23;
+            isfind = 3;
+            console.log("行业媒体");
         } else if (i == 4) {
-            isfind = 4;
+            isfind = -1;
+            console.log("机关企事业");
         } else if (i == 5) {
-            isfind = 0;
+            isfind = 25;
+            console.log("党刊");
         } else if (i == 6) {
-            isfind = 26;
+            isfind = -7;
+            console.log("高校");
         } else if (i == 7) {
-            isfind = -6;
+            isfind = -4;
+            console.log("地方媒体");
         } else if (i == 8) {
-            isfind = -3;
+            isfind = 25;
+            console.log("社会机构");
         } else if (i == 9) {
-            isfind = 27;
+            isfind = 25;
+            console.log("上新");
         } else if (i == 10) {
-            isfind = 27;
+            isfind = 23;
+            console.log("推荐");
         } else if (i == 11) {
-            isfind = 24;
-        } else if (i == 12) {
             isfind = 27;
+            console.log("上新");
+        } else if (i == 12) {
+            isfind = 20;
+            console.log("地区");
         } else if (i == 13) {
-            isfind = 21;
+            isfind = 27;
+            console.log("其他");
         } else if (i == 14) {
             isfind = 27;
-        } else if (i == 15) {
-            isfind = 27;
+            console.log("上线");
         }
         while (isfind < 28 && asub > 0) { //isfind往下滑28次数num订阅个数
             sleep(1000);
