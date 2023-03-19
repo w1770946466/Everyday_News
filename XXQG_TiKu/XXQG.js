@@ -993,7 +993,7 @@ function sub() {
     console.info('改变文本框位置');
     console.setPosition(0, 0.67 * y)
     ending:
-    for (i = 0; i < a.length; i++) {//i是a中的数
+    for (i = 0; i < 16; i++) {//i是a中的数
         sleep(1000);
         //console.info(a[i+2]);
         if (i >= a.length) {
@@ -1002,13 +1002,42 @@ function sub() {
             click(0.1 * x, y / a[i - 10]);
         } else if (i > 15) {
             console.info('没有找到可订阅的，退出');
-            return;
+            break ending;
         } else {
             click(0.1 * x, y / a[i]);//点击左侧推荐、上新啥的依次循环
         }
-
         sleep(1000)
-        isfind = 0;
+        if (i == 1){
+            isfind = 26;
+        } else if (i == 2) {
+            isfind = 27;
+        } else if (i == 3) {
+            isfind = 23;
+        } else if (i == 4) {
+            isfind = 4;
+        } else if (i == 5) {
+            isfind = 0;
+        } else if (i == 6) {
+            isfind = 26;
+        } else if (i == 7) {
+            isfind = -6;
+        } else if (i == 8) {
+            isfind = -3;
+        } else if (i == 9) {
+            isfind = 27;
+        } else if (i == 10) {
+            isfind = 27;
+        } else if (i == 11) {
+            isfind = 24;
+        } else if (i == 12) {
+            isfind = 27;
+        } else if (i == 13) {
+            isfind = 21;
+        } else if (i == 14) {
+            isfind = 27;
+        } else if (i == 15) {
+            isfind = 27;
+        }
         while (isfind < 28 && asub > 0) { //isfind往下滑28次数num订阅个数
             sleep(1000);
             var img = captureScreen();
