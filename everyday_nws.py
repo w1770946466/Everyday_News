@@ -136,6 +136,7 @@ if __name__ == '__main__':
     files = os.listdir(photo_path)
     base = random.sample(files,1)[0]
     base_jpg = "./1920x1080/" + base
+    print(base)
     #天行健key
     global TX_KEY
     TX_KEY = os.environ.get("TX_KEY")
