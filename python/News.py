@@ -18,7 +18,7 @@ def news(TX_KEY):
                 title = title[:25] + '<br>' + title[25:]
             new += str(index + 1) + '、' + title + '<br>'
         title = news_list[index].get('title')
-    new = '</p></body></html>'
+    new += '</p></body></html>'
     return new
 
 # 名言
