@@ -29,7 +29,7 @@ def verse(TX_KEY):
     verse_list = loads.get('newslist')
     source = verse_list[0].get('content')
     saying = verse_list[0].get('author')
-    verse_str = '【微语】 ' + source +  "\n\n           ——" +saying
+    verse_str = '【微语】 ' + source +  "\n\n                                         ——" +saying
     return verse_str
 
 
