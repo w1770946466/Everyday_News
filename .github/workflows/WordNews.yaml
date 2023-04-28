@@ -43,4 +43,4 @@ jobs:
          TOKEN: ${{ secrets.TOKEN }}
          CHAT_ID: ${{ secrets.CHAT_ID }}
          TX_KEY: ${{ secrets.TX_KEY }}
-        run: python3 News.py 
+        run: python3 ./python/News.py 
