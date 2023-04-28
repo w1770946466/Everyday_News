@@ -71,7 +71,7 @@ def post_tg(message):
     if telegram_status == 200:
         print(f"INFO: Telegram Message sent")
     else:
-        print("Telegram Error",telegram_status)
+        print("Telegram Error",telegram_req.text)
 
 if __name__ == '__main__':
     TX_KEY = os.environ.get("TX_KEY")
