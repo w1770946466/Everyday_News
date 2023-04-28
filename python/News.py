@@ -12,12 +12,8 @@ def news(TX_KEY):
     news_list = loads.get('newslist')
     new = '<b>'
     for index in range(len(news_list)):
-        if index > 0:
-            title = news_list[index].get('title')
-            if len(title) > 25:
-                title = title[:25] + '\n' + title[25:]
-            new += str(index + 1) + '、' + title + '\n'
         title = news_list[index].get('title')
+        new += str(index + 1) + '、' + title + '\n' 
     new += '</b>'
     return new
 
