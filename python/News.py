@@ -12,7 +12,7 @@ def news(TX_KEY):
     news_list = loads.get('newslist')
     #print(news_list)
     today_time = todayYear()
-    new = '<b>' + today_time +'\n'
+    new = '<b>' + today_time + '今日热点' + '\n' + '\n'
     for index in range(len(news_list)):
         title = news_list[index].get('title')
         digest = news_list[index].get('digest')
