@@ -10,6 +10,7 @@ def news(TX_KEY):
     response = requests.get(req_url)
     loads = json.loads(response.text)
     news_list = loads.get('newslist')
+    print(news_list)
     new = '<b>'
     for index in range(len(news_list)):
         title = news_list[index].get('title')
