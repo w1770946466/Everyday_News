@@ -10,12 +10,12 @@ def news(TX_KEY):
     response = requests.get(req_url)
     loads = json.loads(response.text)
     news_list = loads.get('newslist')
-    print(news_list)
+    #print(news_list)
     new = '<b>'
     for index in range(len(news_list)):
         title = news_list[index].get('title')
         digest = news_list[index].get('digest')
-        new += str(index + 1) + '、' + title + '\n' + '\n' + '</b><pre>' + digest + '\n' + '</pre><b>'
+        new += str(index + 1) + '、' + title + '\n' + '\n' + '</b><pre>' + digest + '\n' + '\n' + '</pre><b>'#样式1、xxx\n\n xxx\n\n
     new += '</b>'
     return new
 
