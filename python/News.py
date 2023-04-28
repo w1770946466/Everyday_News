@@ -10,16 +10,15 @@ def news(TX_KEY):
     response = requests.get(req_url)
     loads = json.loads(response.text)
     news_list = loads.get('newslist')
-    new = ''
+    new = '<p>'
     for index in range(len(news_list)):
         if index > 12:
             title = news_list[index].get('title')
             if len(title) > 25:
-                title = title[:25] + '  
-                ' + title[25:]
-            new += str(index + 1) + '、' + title + '  
-            '
+                title = title[:25] + '<br>' + title[25:]
+            new += str(index + 1) + '、' + title + '<br>'
         title = news_list[index].get('title')
+    new += '</p>'
     return new
 
 # 名言
@@ -63,7 +62,7 @@ def post_tg(message):
     params = (
         ('chat_id', chat_id),
         ('text', telegram_message),
-        ('parse_mode', "Markdown"), #可选Html或Markdown
+        ('parse_mode', "Html"), #可选Html或Markdown
         ('disable_web_page_preview', "yes")
     )    
     telegram_url = "https://api.telegram.org/bot" + tg_token + "/sendMessage"
@@ -72,7 +71,7 @@ def post_tg(message):
     if telegram_status == 200:
         print(f"INFO: Telegram Message sent")
     else:
-        print("Telegram Error")
+        print("Telegram Error",telegram_status)
 
 if __name__ == '__main__':
     TX_KEY = os.environ.get("TX_KEY")
