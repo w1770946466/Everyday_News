@@ -11,7 +11,7 @@ def news(TX_KEY):
     loads = json.loads(response.text)
     news_list = loads.get('newslist')
     #print(news_list)
-    new = '<div style="text-align: center;"><h1>今日热点</h1></div><b>'
+    new = '<h1 style="text-align: center;">今日热点</h1><b>'
     for index in range(len(news_list)):
         title = news_list[index].get('title')
         digest = news_list[index].get('digest')
