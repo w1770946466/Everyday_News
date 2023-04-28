@@ -4,9 +4,28 @@ import os
 import json
 from datetime import *
 
+# 每日简报
+def news(TX_KEY):
+    req_url = 'http://api.tianapi.com/networkhot/index?key=' + TX_KEY
+    response = requests.get(req_url)
+    loads = json.loads(response.text)
+    news_list = loads.get('newslist')
+    news = ''
+    new = ''
+    for index in range(len(news_list)):
+        if index > 12:
+            title = news_list[index].get('title')
+            if len(title) > 25:
+                title = title[:25] + '\n   ' + title[25:]
+            new += str(index + 1) + '、' + title + '\n\n'
+        title = news_list[index].get('title')
+        if len(title) > 25:
+            title = title[:25] + '\n   ' + title[25:]
+        news += str(index + 1) + '、' + title + '\n\n'
+    return news,new
 
 # 名言
-def verse():
+def verse(TX_KEY):
     req_url = 'http://api.tianapi.com/mingyan/index?key=' + TX_KEY
     response = requests.get(req_url)
     loads = json.loads(response.text)
@@ -28,7 +47,7 @@ def todayYear():
 
 
 # 精美句子
-def sentence():
+def sentence(TX_KEY):
     req_url = 'http://api.tianapi.com/dujitang/index?key=' + TX_KEY
     response = requests.get(req_url)
     loads = json.loads(response.text)
@@ -58,5 +77,7 @@ def post_tg(message):
         print("Telegram Error")
 
 if __name__ == '__main__':
-    
+    TX_KEY = os.environ.get("TX_KEY")
+    message = news(TX_KEY)
+    post_tg(message)
   
