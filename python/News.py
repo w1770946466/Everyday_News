@@ -10,7 +10,7 @@ def news(TX_KEY):
     response = requests.get(req_url)
     loads = json.loads(response.text)
     news_list = loads.get('newslist')
-    new = ''
+    new = '<!DOCTYPE html><html><body><p>'
     for index in range(len(news_list)):
         if index > 12:
             title = news_list[index].get('title')
@@ -18,6 +18,7 @@ def news(TX_KEY):
                 title = title[:25] + '<br>' + title[25:]
             new += str(index + 1) + '、' + title + '<br>'
         title = news_list[index].get('title')
+    new = '</p></body></html>'
     return new
 
 # 名言
