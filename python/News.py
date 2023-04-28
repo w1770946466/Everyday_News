@@ -19,7 +19,7 @@ def news(TX_KEY):
             new += str(index + 1) + '、' + title + '\n\n'
         title = news_list[index].get('title')
     #return new
-    return news_list
+    return response.text
 
 # 名言
 def verse(TX_KEY):
