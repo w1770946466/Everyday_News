@@ -17,7 +17,8 @@ def news(TX_KEY):
         title = news_list[index].get('title')
         digest = news_list[index].get('digest')
         new += str(index + 1) + '、' + title + '\n' + '</b><pre>' + digest + '\n' + '\n' + '</pre><b>'#样式1、xxx\n xxx\n\n
-    new += '</b>'
+    v = verse(TX_KEY)
+    new += v + '</b>'
     return new
 
 # 名言
@@ -29,10 +30,7 @@ def verse(TX_KEY):
     source = verse_list[0].get('content')
     saying = verse_list[0].get('author')
     verse_str = '【微语】 ' + source +  "\n\n——" +saying
-    resp_verse = verse_str
-    if len(verse_str) > 22:
-        resp_verse = verse_str[:23] + '\n\n' + verse_str[23:]
-    return resp_verse
+    return verse_str
 
 
 # 年月日
