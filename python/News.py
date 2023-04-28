@@ -15,7 +15,7 @@ def news(TX_KEY):
     for index in range(len(news_list)):
         title = news_list[index].get('title')
         digest = news_list[index].get('digest')
-        new += str(index + 1) + '、' + title + '\n' + '</b><pre>' + digest + '\n' + '</pre><b>'
+        new += str(index + 1) + '、' + title + '\n' + '\n' + '</b><pre>' + digest + '\n' + '</pre><b>'
     new += '</b>'
     return new
 
