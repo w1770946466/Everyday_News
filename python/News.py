@@ -15,11 +15,10 @@ def news(TX_KEY):
         if index > 12:
             title = news_list[index].get('title')
             if len(title) > 25:
-                title = title[:25] + '\n   ' + title[25:]
-            new += str(index + 1) + '、' + title + '\n\n'
+                title = title[:25] + '  ' + title[25:]
+            new += str(index + 1) + '、' + title + '  '
         title = news_list[index].get('title')
-    #return new
-    return response.text
+    return new
 
 # 名言
 def verse(TX_KEY):
