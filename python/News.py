@@ -15,8 +15,10 @@ def news(TX_KEY):
         if index > 12:
             title = news_list[index].get('title')
             if len(title) > 25:
-                title = title[:25] + '<br>' + title[25:]
-            new += str(index + 1) + '、' + title + '<br>'
+                title = title[:25] + '  
+                ' + title[25:]
+            new += str(index + 1) + '、' + title + '  
+            '
         title = news_list[index].get('title')
     return new
 
@@ -61,7 +63,7 @@ def post_tg(message):
     params = (
         ('chat_id', chat_id),
         ('text', telegram_message),
-        ('parse_mode', "Html"), #可选Html或Markdown
+        ('parse_mode', "Markdown"), #可选Html或Markdown
         ('disable_web_page_preview', "yes")
     )    
     telegram_url = "https://api.telegram.org/bot" + tg_token + "/sendMessage"
