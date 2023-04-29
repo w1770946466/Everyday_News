@@ -53,7 +53,7 @@ def main():
     #print(zhihu[0],zhihu[1])
     message = ''
     for i in range(len(zhihu[0])):
-        message += str(zhihu[0][i]) + '【' + str(zhihu[1][i]) + '】'
+        message += str(zhihu[0][i]) + '【' + str(zhihu[1][i]) + '】\n\n'
     post_tg(message)
 
 if __name__ == '__main__':
