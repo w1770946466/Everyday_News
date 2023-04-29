@@ -51,9 +51,9 @@ def post_tg(message):
 def main():
     zhihu = get_zhihu_hot()
     #print(zhihu[0],zhihu[1])
-    message = ''
+    message = '知乎热榜\n\n'
     for i in range(len(zhihu[0])):
-        message += str(zhihu[0][i]) + '【' + str(zhihu[1][i]) + '】\n\n'
+        message += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n'
     post_tg(message)
 
 if __name__ == '__main__':
