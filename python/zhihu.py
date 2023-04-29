@@ -52,7 +52,7 @@ def main():
     zhihu = get_zhihu_hot()
     #print(zhihu[0],zhihu[1])
     message = ''
-    for i in len(zhihu[0]):
+    for i in range(len(zhihu[0])):
         message += str(zhihu[0][i]) + '【' + str(zhihu[1][i]) + '】'
     post_tg(message)
 
