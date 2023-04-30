@@ -18,7 +18,7 @@ def get_zhihu_hot():
         if "target" in item :
             question = item["target"]["title"]
             answer = item["target"]["excerpt"]
-            url = item["target"]["url"]
+            url = 'https://www.zhihu.com/question/' + str(item["target"]["id"])
             hot = item["detail_text"]
             hot_titles.append(question)
             hot_url.append(url)
@@ -52,9 +52,9 @@ def main():
     message2 = '知乎热榜\n\n'
     for i in range(len(zhihu[0])):
         if len(message) < 4000:
-            message += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n' + str(zhihu[2][i]) + '\n\n'
+            message += 'i' + '、' + str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n' + str(zhihu[2][i]) + '\n\n'
         else:
-            message2 += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n' + str(zhihu[2][i]) + '\n\n'
+            message2 += 'i' + '、' + str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n' + str(zhihu[2][i]) + '\n\n'
     if len(message2) > 10:
         print("消息太长了分段发送")
         post_tg(message)
