@@ -22,11 +22,12 @@ def get_zhihu_hot():
             content = item.find("div", class_="css-1o6sw4j").text
             hot_content.append(content)#内容缺失
         except:
-            pass
+            content = ""
+            hot_content.append(content)
         fire = item.find("div", class_="css-1iqwfle").text
         hot_titles.append(title)
         hot_fire.append(fire)
-    return hot_titles,hot_fire  #,hot_content
+    return hot_titles,hot_fire,hot_content
 
 #TG发消息
 def post_tg(message):
@@ -53,7 +54,7 @@ def main():
     #print(zhihu[0],zhihu[1])
     message = '知乎热榜\n\n'
     for i in range(len(zhihu[0])):
-        message += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n'
+        message += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n' + str(zhihu[2][i]) + '】\n\n'
     post_tg(message)
 
 if __name__ == '__main__':
