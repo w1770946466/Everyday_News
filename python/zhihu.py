@@ -53,10 +53,18 @@ def main():
     zhihu = get_zhihu_hot()
     #print(zhihu[0],zhihu[1])
     message = '知乎热榜\n\n'
+    message2 = '知乎热榜\n\n'
     for i in range(len(zhihu[0])):
-        message += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n' + str(zhihu[2][i]) + '】\n\n'
-    post_tg(message)
-
+        if len(message) < 4000:
+            message += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n' + str(zhihu[2][i]) + '】\n\n'
+        else:
+            message2 += str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n\n' + str(zhihu[2][i]) + '】\n\n'
+    if len(message2) > 20:
+        post_tg(message)
+        post_tg(message2)
+    else:
+        post_tg(message)
+    
 if __name__ == '__main__':
     main()
     
