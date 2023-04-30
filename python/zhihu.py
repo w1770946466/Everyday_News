@@ -4,30 +4,26 @@ from bs4 import BeautifulSoup
 
 # 爬取知乎热门内容
 def get_zhihu_hot():
-    url = "https://www.zhihu.com/hot"
+    url = "https://www.zhihu.com/api/v3/feed/topstory/hot-lists/total?limit=10&desktop=true"
     headers = {
-        "User-Agent": "Mozilla/5.0 (iPad; CPU OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5355d Safari/8536.25"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3"
     }
     response = requests.get(url, headers=headers)
-    #print(response.text)
-    soup = BeautifulSoup(response.text, "html.parser")
-    hot_list = soup.find_all("div", class_="css-1mx3lj4")
-    #print(hot_list)
+    data = response.json()
     hot_titles = []
-    hot_content = []
+    hot_url = []
     hot_fire = []
-    for item in hot_list:
-        title = item.find("h1", class_="css-3yucnr").text
-        try:
-            content = item.find("div", class_="css-1o6sw4j").text
-            hot_content.append(content)#内容缺失
-        except:
-            content = ""
-            hot_content.append(content)
-        fire = item.find("div", class_="css-1iqwfle").text
-        hot_titles.append(title)
-        hot_fire.append(fire)
-    return hot_titles,hot_fire,hot_content
+    # 获取问题及答案
+    for item in data["data"]:
+        if "target" in item :
+            question = item["target"]["title"]
+            answer = item["target"]["excerpt"]
+            url = item["target"]["url"]
+            hot = item["detail_text"]
+            hot_titles.append(question)
+            hot_url.append(url)
+            hot_fire.append(hot)
+    return hot_titles,hot_fire,hot_url
 
 #TG发消息
 def post_tg(message):
