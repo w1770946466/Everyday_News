@@ -39,9 +39,15 @@ def get_weibo():
                 label_name = item['icon_desc']
             else:
                 label_name = '无'
-            itemStr = '{}、【{}】{}【{}】\n'.format(index+1, label_name, word, str(raw_hot))
+            if label_name == "热":
+                itemStr = '{}、【✨】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
+            elif label_name == "新":
+                itemStr = '{}、【🔺】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
+            elif label_name == "无":
+                itemStr = '{}、【🔴】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
             if index < 20:
                 textStr += str(itemStr+'\n')
+    textStr += "https://s.weibo.com/top/summary/"
     #print(textStr)
     return textStr
         
