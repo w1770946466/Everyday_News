@@ -44,7 +44,7 @@ def get_weibo():
             elif label_name == "新":
                 itemStr = '{}、【🔺】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
             elif label_name == "无":
-                itemStr = '{}、【🔴】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
+                itemStr = '{}、【🔻】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
             if index < 20:
                 textStr += str(itemStr+'\n')
     textStr += "https://s.weibo.com/top/summary/"
