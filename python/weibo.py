@@ -39,7 +39,7 @@ def get_weibo():
                 label_name = item['icon_desc']
             else:
                 label_name = '无'
-            itemStr = '{}、{}{}{}'.format(index+1, '【'+label_name+'】', word,'\n【🔥 ' + str(raw_hot) + '】')
+            itemStr = '{}、【{}】{}【{}】'.format(index+1, label_name, word, str(raw_hot))
             if index < 21:
                 textStr += str(itemStr+'\n')
     #print(textStr)
