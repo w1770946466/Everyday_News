@@ -52,8 +52,10 @@ def main():
     for i in range(len(zhihu[0])):
         if i < 20:
             message += str(i+1) + '、' + str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n' + str(zhihu[2][i]) + '\n\n'
+    message2 = '<a href="https://www.google.com">前往 Google</a>'
     try:
-        post_tg(message)
+        #post_tg(message)
+        post_tg(message2)
     except Eexception as e:
         print(e)
     
