@@ -52,7 +52,11 @@ def main():
     for i in range(len(zhihu[0])):
         if i < 20:
             message += str(i+1) + '、' + str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n' + str(zhihu[2][i]) + '\n\n'
-    post_tg(message,message)
+    try:
+        post_tg(message,message)
+    except Eexception as e:
+        print(e)
+    
     
 if __name__ == '__main__':
     main()
