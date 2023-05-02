@@ -49,18 +49,11 @@ def main():
     zhihu = get_zhihu_hot()
     #print(zhihu[0],zhihu[1])
     message = '知乎热榜\n\n'
-    message2 = '知乎热榜\n\n'
     for i in range(len(zhihu[0])):
-        if len(message) < 4000:
+        if i < 20:
             message += str(i+1) + '、' + str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n' + str(zhihu[2][i]) + '\n\n'
-        else:
-            message2 += str(i+1) + '、' + str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n' + str(zhihu[2][i]) + '\n\n'
-    if len(message2) > 10:
-        print("消息太长了分段发送")
-        post_tg(message)
-        post_tg(message2)
-    else:
-        post_tg(message)
+    message2 = '<a href="https://www.google.com">前往 Google</a>'
+    post_tg(message,message)
     
 if __name__ == '__main__':
     main()
