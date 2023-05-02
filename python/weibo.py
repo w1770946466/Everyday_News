@@ -47,7 +47,7 @@ def get_weibo():
                 itemStr = '{}、【🔻】{}<a href="https://m.weibo.cn/search?containerid=231522type=1&q={}">【🔥{}】</a>\n'.format(index+1, word, word,str(raw_hot))
             if index < 20:
                 textStr += str(itemStr+'\n')
-    textStr += "榜单：https://s.weibo.com/top/summary/"
+    #textStr += "榜单：https://s.weibo.com/top/summary/"
     #print(textStr)
     return textStr
         
