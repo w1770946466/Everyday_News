@@ -40,14 +40,14 @@ def get_weibo():
             else:
                 label_name = '无'
             if label_name == "热":
-                itemStr = '{}、【✨】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
+                itemStr = '{}、【✨】{}<a href="https://m.weibo.cn/search?containerid=231522type=1&q={}">【🔥{}】</a>\n'.format(index+1, word, word,str(raw_hot))
             elif label_name == "新":
-                itemStr = '{}、【🔺】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
+                itemStr = '{}、【🔺】{}<a href="https://m.weibo.cn/search?containerid=231522type=1&q={}">【🔥{}】</a>\n'.format(index+1, word, word,str(raw_hot))
             elif label_name == "无":
-                itemStr = '{}、【🔻】{}【🔥{}】\n'.format(index+1, word, str(raw_hot))
+                itemStr = '{}、【🔻】{}<a href="https://m.weibo.cn/search?containerid=231522type=1&q={}">【🔥{}】</a>\n'.format(index+1, word, word,str(raw_hot))
             if index < 20:
                 textStr += str(itemStr+'\n')
-    textStr += "https://s.weibo.com/top/summary/"
+    textStr += "榜单：https://s.weibo.com/top/summary/"
     #print(textStr)
     return textStr
         
