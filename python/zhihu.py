@@ -51,7 +51,7 @@ def main():
     message = '知乎热榜\n\n'
     for i in range(len(zhihu[0])):
         if i < 20:
-            message += str(i+1) + '、' + str(zhihu[0][i]) + '\n<a href="'+ str(zhihu[2][i]) + '">' + '\n【🔥' + str(zhihu[1][i]) + '】\n\n' </a>'
+            message += str(i+1) + '、' + str(zhihu[0][i]) + '\n<a href="'+ str(zhihu[2][i]) + '">' + '【🔥' + str(zhihu[1][i]) + '】</a>\n\n'
     try:
         post_tg(message)
     except Eexception as e:
