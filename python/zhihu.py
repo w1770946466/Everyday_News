@@ -53,7 +53,7 @@ def main():
         if i < 20:
             message += str(i+1) + '、' + str(zhihu[0][i]) + '\n【🔥' + str(zhihu[1][i]) + '】\n' + str(zhihu[2][i]) + '\n\n'
     try:
-        post_tg(message,message)
+        post_tg(message)
     except Eexception as e:
         print(e)
     
