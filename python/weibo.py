@@ -41,6 +41,8 @@ def get_weibo():
                 label_name = '无'
             if label_name == "热":
                 itemStr = '{}、【✨】{}<a href="https://m.weibo.cn/search?containerid=231522type=1&q={}">【🔥{}】</a>\n\n'.format(index+1, word, word,str(raw_hot))
+            elif label_name == "沸":
+                itemStr = '{}、【🎉】{}<a href="https://m.weibo.cn/search?containerid=231522type=1&q={}">【🔥{}】</a>\n\n'.format(index+1, word, word,str(raw_hot))
             elif label_name == "新":
                 itemStr = '{}、【🔺】{}<a href="https://m.weibo.cn/search?containerid=231522type=1&q={}">【🔥{}】</a>\n\n'.format(index+1, word, word,str(raw_hot))
             elif label_name == "无":
